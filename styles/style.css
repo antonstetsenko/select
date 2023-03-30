@@ -1,0 +1,130 @@
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/poppins-regular.woff2') format('woff2')
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/poppins-500.woff2') format('woff2')
+}
+
+:root {
+  --white: #FFFFFF;
+  --dark-main: #000000;
+  --dark-main-dark: #191919;
+  --dark-first: #202020;
+  --dark-third: #4C4C4C;
+  --dark-fifth: #808080;
+  --primary-green-first: #33AD5E;
+  --input: 400 16px/20px 'Poppins';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+body {
+  background: var(--dark-main);
+}
+
+.wrapper {
+  width: 250px;
+  margin: 130px auto 0;
+}
+
+.select-btn {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 14px 15px 14px;
+  background-color: var(--dark-main);
+  border: 1px solid var(--dark-first);
+  border-radius: 10px;
+  font: var(--input);
+  color: var(--dark-fifth);
+  cursor: pointer;
+}
+
+.select-btn .select-icon {
+  transition: transform .3s ease-in-out;
+}
+
+.wrapper.active .select-btn .select-icon {
+  transform: rotate(-180deg);
+}
+
+.select-choice {
+  width: 100%;
+  display: flex;
+}
+
+.content {
+  display: none;
+  margin: 15px 0px 0px 0px;
+  background-color: var(--dark-main-dark);
+  border-radius: 10px;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper.active .content{
+  display: block;
+}
+
+.content .options {
+  padding: 8px 0px 0px 0px;
+  max-height: 250px;
+  overflow-y: scroll;
+  color: var(--white);
+}
+
+.options::-webkit-scrollbar {
+  width: 6px;
+}
+
+.options::-webkit-scrollbar-track {
+  background-color: var(--dark-first);
+  border-radius: 0px 10px 10px 0px;
+}
+
+.options::-webkit-scrollbar-thumb {
+  background-color: var(--dark-third);
+  border-radius: 48px;
+}
+
+.options li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 14px 15px 14px;
+  margin: 0px 8px 0px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: color .3s ease-in-out, background-color .3s ease-in-out;
+  list-style-type: none;
+}
+
+.options li:hover {
+  background-color: var(--dark-first);
+  color: var(--primary-green-first);
+  transition: color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+.option-left {
+  width: 90%;
+  display: flex;
+  align-items: center;
+}
+
+.option-img {
+  width: 24px;
+  height: 24px;
+  margin: 0px 8px 0px 0px;
+}
