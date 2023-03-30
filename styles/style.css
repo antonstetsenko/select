@@ -2,14 +2,8 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/poppins-regular.woff2') format('woff2')
-}
-
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 500;
-  src: url('/fonts/poppins-500.woff2') format('woff2')
+  src: url('/fonts/poppins-regular.woff2') format('woff2'),
+       url('/fonts/poppins-500.woff2') format('woff2');
 }
 
 :root {
@@ -44,13 +38,19 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 14px 15px 14px;
+  padding: 14px 13px;
   background-color: var(--dark-main);
   border: 1px solid var(--dark-first);
   border-radius: 10px;
   font: var(--input);
   color: var(--dark-fifth);
   cursor: pointer;
+  transition: border .3s ease-in-out;
+}
+
+.select-btn:hover {
+  border: 1px solid var(--primary-green-first);
+  transition: border .3s ease-in-out;
 }
 
 .select-btn .select-icon {

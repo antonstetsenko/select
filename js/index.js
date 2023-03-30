@@ -85,6 +85,7 @@ let countries = [
   },
 ];
 
+
 function addCountry() {
   countries.forEach(country => {
     let li = `<li onclick="updateName(this)"><span class="option-left"><img class="option-img" src=${country.img}> ${country.name}</span><span>${country.code}</span></li>`;
@@ -95,7 +96,6 @@ function addCountry() {
 addCountry();
 
 function updateName(selectedLi) {
-  console.log(this)
   wrapper.classList.remove('active');
   selectBtn.firstElementChild.innerHTML = selectedLi.innerHTML.slice(0, -17);
 }
@@ -103,3 +103,11 @@ function updateName(selectedLi) {
 selectBtn.addEventListener("click" , () => {
   wrapper.classList.toggle("active");
 })
+
+document.addEventListener('click', (e) => {
+  if(e.target.closest('.select-btn') !== selectBtn)
+    wrapper.classList.remove('active');
+  }
+);
+
+  
